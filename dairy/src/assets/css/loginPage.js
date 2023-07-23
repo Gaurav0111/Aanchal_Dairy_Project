@@ -14,10 +14,11 @@ const Wrapper = styled.div`
     max-width: 400px;
     border-radius: 8px;
     border-top: 0.5rem solid #d4d4d4;
-    padding: 20px; /* Increased the padding to increase the height of the form */
+    padding: 15px;
     text-align: center;
     background-color: #fff;
-    height: 400px;
+    display: flex;
+    flex-direction: column;
   }
 
   .factoryLogo {
@@ -59,6 +60,7 @@ const Wrapper = styled.div`
     border-radius: 4px;
     font-size: 16px;
     transition: border-color 0.3s ease-in-out;
+    background-color: #d3e5e1;
   }
 
   .formInput:focus {
@@ -70,6 +72,7 @@ const Wrapper = styled.div`
     width: 100%;
     max-width: 300px;
     padding: 12px;
+    margin-left:50px;
     border: none;
     border-radius: 4px;
     background-color: #4e9b8d;
@@ -82,7 +85,35 @@ const Wrapper = styled.div`
   .btn:hover {
     background-color: #409383;
   }
+  .alert{
+    background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 100%; /* Set the width to 100% */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  }
 
+  p {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .member-btn {
+    background-color: transparent;
+    color: #4e9b8d;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .member-btn:hover {
+    color: #409383;
+  }
   @media (max-width: 768px) {
     padding: 10px;
 

@@ -33,19 +33,29 @@ const onSubmit=(e)=>{
         </div>
             <h3>{values.isMember ? 'Login':'Register'}</h3>
         {values.showAlert && <Alert/> }
-        {!values.isMember &&(
-        <FormRow  type='text' name='name' value={values.name} handleChange={handleChange} />
-        )}
-        <FormRow  type='email' name='email' value={values.email} handleChange={handleChange} />
-        <FormRow  type='password' name='password' value={values.password} handleChange={handleChange} />
-
-            <button type="submit" className="btn" >Submit</button>
+        {!values.isMember && (
+            <>
+            <p>You can't register yourself Kindly contact Admin Team</p>
             <p>
-                {values.isMember?'Not a member yet?':'Already a member?'}
                 <button type="button" onClick={checkMember} className="member-btn" >
-                {values.isMember?'Register':'Login'}
+                    Already have an account? <span>Login</span>
                 </button>
             </p>
+            </>
+        )}
+        {values.isMember && (
+          <>
+        <FormRow  type='email' name='email' value={values.email} handleChange={handleChange} />
+        <FormRow  type='password' name='password' value={values.password} handleChange={handleChange} />
+        <button type="submit" className="btn" >Submit</button>
+            <p>
+                <button type="button" onClick={checkMember} className="member-btn" >
+                    Don't have an account? <span>Register</span>
+                </button>
+            </p>
+          </>
+        )}
+
         </form>
     </Wrapper>
 }

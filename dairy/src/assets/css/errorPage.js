@@ -14,6 +14,7 @@ const Wrapper = styled.div`
     text-align: center;
   }
 
+/* Responsive Media Queries */
   @media (max-width: 800px) {
     img {
       width: 250px; 

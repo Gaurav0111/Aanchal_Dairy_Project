@@ -1,7 +1,7 @@
-const FormRow = ({type, name, value, handleChange, lableText}) =>{
+const FormRow = ({type, name, value, handleChange, labelText}) =>{
     return(
         <div>
-            <lable htmlFor={name} className='lableInput' >{lableText || name}</lable>
+            <label htmlFor={name} className='lableInput' >{labelText || name}</label>
             <input type={type} value={value} className='formInput' name={name} onChange={handleChange} />
         </div>
     )

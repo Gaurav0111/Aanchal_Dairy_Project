@@ -29,13 +29,13 @@ app.listen(port, ()=>{
     console.log(`Server is running...${port}`)
 })
 
-// const start = async ()=> {
-//     try{
-//         await connectDB(process.env.MONGO_URL)
-//     }
-//     catch(error){
-//         console.log(error)
-//     }
-// }
+const start = async ()=> {
+    try{
+        await connectDB(process.env.MONGO_URL)
+    }
+    catch(error){
+        console.log(error)
+    }
+}
 
-// start()
+start()

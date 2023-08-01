@@ -3,4 +3,4 @@ import Login from "./login";
 import Error from "./Error";
 import Landing from "./landing";
 
-export {Dashboard, Login, Error, Landing};
+export { Dashboard, Login, Error, Landing };

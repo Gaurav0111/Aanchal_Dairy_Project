@@ -13,7 +13,7 @@ import errorHandlerMiddleWare from "./middleware/error-handler.js";
 
 app.use(express.json()) // will make all the json data avaible in controllers
 
-app.get('/',(req, res)=>{
+app.get('/', (req, res) => {
     // throw new Error('sd')
     res.send('Welcome.. !')
 })
@@ -25,15 +25,15 @@ app.use(notFoundMiddleware) // if none of the app.get() request will be matched,
 app.use(errorHandlerMiddleWare) // while executing any app. if an error occures, this will be executed
 
 const port = process.env.PORT || 5000;
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`Server is running...${port}`)
 })
 
-const start = async ()=> {
-    try{
+const start = async () => {
+    try {
         await connectDB(process.env.MONGO_URL)
     }
-    catch(error){
+    catch (error) {
         console.log(error)
     }
 }

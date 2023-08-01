@@ -1,8 +1,8 @@
 import logo from '../assets/images/logo_anchal.png'
 
-const Logo = () =>{
+const Logo = () => {
     return (
-            <img className='logo_1' href='/' src={logo} />
+        <img className='logo_1' href='/' src={logo} />
     )
 }
 

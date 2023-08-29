@@ -1,12 +1,8 @@
 import User from "../models/User-model.js";
 
-const register = async (req, res) => {
-    try {
+const register = async (req, res, next) => {
         const user = await User.create(req.body);
-        res.status(201).json({ user }); // Using res.status(201) and res.json()
-    } catch (error) {
-        res.status(500).json({ msg: 'There was an error while registering' });
-    }
+        res.status(201).json({ user });
 }
 
 const login = async (req, res) => {

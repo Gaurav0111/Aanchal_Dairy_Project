@@ -26,7 +26,7 @@ app.use('/api/v1/job', jobRouter)
 app.use(notFoundMiddleware) // if none of the app.get() request will be matched, this one will be executed
 app.use(errorHandlerMiddleWare) // while executing any app. if an error occures, this will be executed
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 app.listen(port, () => {
     console.log(`Server is running...${port}`)
 })

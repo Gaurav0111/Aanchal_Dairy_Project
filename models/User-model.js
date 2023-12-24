@@ -14,4 +14,10 @@ const userSchema = new mongoose.Schema({
     location: { type: String, mixlength: 20, required: [true, 'Please provide password'], default: 'my city', trim: true, },
 })
 
+
+userSchema.pre('save', function(){
+    console.log(this.password); 
+
+})
+
 export default mongoose.model('User', userSchema)

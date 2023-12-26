@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import validator from "validator";
+import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema({
     name: { type: String, required: [true, 'Please provide name'], minlength: 3, maxlength: 20, trim: true, },
@@ -15,9 +16,9 @@ const userSchema = new mongoose.Schema({
 })
 
 
-userSchema.pre('save', function(){
-    console.log(this.password); 
-
+userSchema.pre('save', async function(){
+    const salt = await bcrypt.genSalt(10)
+    this.password = await bcrypt.hash(this.password, salt)
 })
 
 export default mongoose.model('User', userSchema)
